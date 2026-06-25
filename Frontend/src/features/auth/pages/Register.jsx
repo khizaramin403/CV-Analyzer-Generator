@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { message } from 'antd';
 
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import loadingAnimation from '../../assets/loading.json';
+// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+// import loadingAnimation from '../../assets/loading.json';
 
 export const Register = () => {
 
