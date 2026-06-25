@@ -27,25 +27,34 @@ export const Register = () => {
         }
     }
 
-    if (loading) {
-        return (
-        <main className="min-h-screen w-full flex flex-col justify-center items-center bg-[#161616] gap-2">
-    {/* Lottie Animation Component Wrapper */}
-    <div className="w-[150px] h-[150px]">
-        <DotLottieReact
-            src={loadingAnimation}
-            loop
-            autoplay
-        />
-    </div>
+//     if (loading) {
+//         return (
+//         <main className="min-h-screen w-full flex flex-col justify-center items-center bg-[#161616] gap-2">
+//     {/* Lottie Animation Component Wrapper */}
+//     <div className="w-[150px] h-[150px]">
+//         <DotLottieReact
+//             src={loadingAnimation}
+//             loop
+//             autoplay
+//         />
+//     </div>
     
-    <h1 className="text-whitesmoke text-2xl font-bold tracking-wide">
-        Please wait, loading...
-    </h1>
-</main>
+//     <h1 className="text-whitesmoke text-2xl font-bold tracking-wide">
+//         Please wait, loading...
+//     </h1>
+// </main>
+//         )
+//     }
+
+if (loading) {
+        return (
+            <main className="min-h-screen w-full flex flex-col justify-center items-center bg-[#161616] gap-2">
+                <h1 className="text-white text-2xl font-bold tracking-wide">
+                    Please wait, loading...
+                </h1>
+            </main>
         )
     }
-
     
   return (
     <main>
