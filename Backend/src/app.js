@@ -11,12 +11,27 @@ app.use(cookieParser());
 //     credentials: true,
 // }))
 
-app.use(cors({
-    origin: 'https://cv-analyzer-frontend-flame.vercel.app', 
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//     origin: 'https://cv-analyzer-frontend-flame.vercel.app', 
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
+
+// Robust CORS Options
+const corsOptions = {
+  origin: 'https://cv-analyzer-frontend-flame.vercel.app',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  optionsSuccessStatus: 200 // Preflight requests (OPTIONS) ko 200 OK bhejega
+};
+
+app.use(cors(corsOptions));
+
+// Explicitly handle OPTIONS requests before any routes
+app.options('*', cors(corsOptions));
 
 // require all the routes here 
 const authRouter = require('./routes/auth.routes')
